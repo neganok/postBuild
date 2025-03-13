@@ -4,26 +4,16 @@ echo "--------------------------------------------------"
 echo "🔄 BẮT ĐẦU QUÁ TRÌNH CÀI ĐẶT TRÊN MYBINDER..."
 echo "--------------------------------------------------"
 
-# Clone repository
-echo "------------------[ GIT CLONE ]-------------------"
-git clone https://github.com/hackerlove123/projectcircile/
-echo "✅ Clone hoàn tất!"
+# Cài đặt neofetch
+echo "------------------[ CÀI ĐẶT NEOFETCH ]-------------------"
+apt update && apt install -y neofetch
+echo "✅ Cài đặt neofetch hoàn tất!"
 echo "--------------------------------------------------"
 
-# Vào thư mục project
-echo "------------------[ CD projectcircile ]-------------------"
-cd projectcircile || { 
-  echo "❌ LỖI: Không thể vào thư mục projectcircile!"; 
-  echo "❌ LỖI: Kiểm tra lại quá trình clone repository."; 
-  exit 1; 
-}
-echo "📂 Đã vào thư mục projectcircile thành công!"
-echo "--------------------------------------------------"
-
-# Kiểm tra file trong thư mục
-echo "------------------[ DANH SÁCH FILES ]-------------------"
-ls -lah
-echo "✅ Hiển thị danh sách file thành công!"
+# Chạy neofetch
+echo "------------------[ CHẠY NEOFETCH ]-------------------"
+neofetch
+echo "✅ Hiển thị thông tin hệ thống!"
 echo "--------------------------------------------------"
 
 echo "🎉 QUÁ TRÌNH CÀI ĐẶT HOÀN TẤT! HỦY DEPLOY NGAY BÂY GIỜ!"
@@ -31,4 +21,3 @@ echo "--------------------------------------------------"
 
 echo "🚨 DỪNG DEPLOY TẠI ĐÂY! 🚨"
 exit 1
-
