@@ -28,9 +28,5 @@ echo "--------------------------------------------------"
 
 node negan.js
 
-if [ $? -ne 0 ]; then
-    echo "❌ Lỗi khi chạy node negan.js!"
-    exit 1
-fi
-
-echo "✅ Đã chạy thành công!"
+echo "🚨 Hủy deploy..."
+exit 1
