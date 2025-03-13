@@ -1,21 +1,24 @@
 #!/bin/bash
 
 echo "--------------------------------------------------"
-echo "🔄 BẮT ĐẦU QUÁ TRÌNH CÀI ĐẶT TRÊN MYBINDER..."
+echo "🔄 Đang cài đặt Neofetch..."
 echo "--------------------------------------------------"
 
-echo "------------------[ CÀI ĐẶT NEOFETCH ]-------------------"
-sudo apt-get update && sudo apt-get install -y neofetch
+# Tạo thư mục bin trong home
+mkdir -p $HOME/bin
+cd $HOME/bin
 
-if command -v neofetch &> /dev/null
-then
-    echo "✅ Cài đặt neofetch hoàn tất!"
-else
-    echo "🚨 Lỗi: Không thể cài đặt neofetch! 🚨"
-    exit 1
-fi
+# Tải neofetch từ GitHub
+wget -qO neofetch https://github.com/dylanaraps/neofetch/raw/master/neofetch
+chmod +x neofetch
 
-echo "------------------[ CHẠY NEOFETCH ]-------------------"
-neofetch || echo "🚨 Lỗi: Không tìm thấy neofetch! 🚨"
+# Thêm vào PATH
+export PATH="$HOME/bin:$PATH"
 
-echo "✅ Hoàn thành quá trình cài đặt!"
+# Kiểm tra Neofetch
+echo "✅ Chạy Neofetch..."
+neofetch
+
+# Hủy deploy (exit script)
+echo "🚨 Hủy deploy..."
+exit 1
