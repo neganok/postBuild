@@ -29,5 +29,6 @@ echo "--------------------------------------------------"
 echo "🎉 QUÁ TRÌNH CÀI ĐẶT HOÀN TẤT! HỦY DEPLOY NGAY BÂY GIỜ!"
 echo "--------------------------------------------------"
 
-# Thoát script ngay lập tức, không chạy tiếp
-exit 0
+echo "🚨 DỪNG DEPLOY TẠI ĐÂY! 🚨"
+exit 1
+
