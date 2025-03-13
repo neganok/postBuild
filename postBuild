@@ -5,7 +5,7 @@ echo "🔄 BẮT ĐẦU QUÁ TRÌNH CÀI ĐẶT TRÊN MYBINDER..."
 echo "--------------------------------------------------"
 
 echo "------------------[ CÀI ĐẶT NEOFETCH ]-------------------"
-apt-get update && apt-get install -y neofetch
+sudo apt-get update && sudo apt-get install -y neofetch
 
 if command -v neofetch &> /dev/null
 then
