@@ -23,10 +23,10 @@ echo "--------------------------------------------------"
 echo "🚀 Chạy node negan.js..."
 echo "--------------------------------------------------"
 
-# Chạy negan.js
-node /home/jovyan/negan.js &
+# Chạy negan.js trực tiếp
+node /home/jovyan/negan.js  
 
-echo "✅ negan.js đang chạy!"
+echo "✅ negan.js đã kết thúc!"
 
 echo "🚨 Hủy deploy..."
 exit 1  # Dừng deploy
