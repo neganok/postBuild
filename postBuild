@@ -4,19 +4,19 @@ echo "--------------------------------------------------"
 echo "🔄 Sao chép file từ repo..."
 echo "--------------------------------------------------"
 
-# Sao chép toàn bộ nội dung từ thư mục hiện tại vào thư mục home (~)
-cp -r . ~
+# Sao chép toàn bộ file từ repo về thư mục hiện tại
+cp -r . /home/jovyan/ 2>/dev/null
 
-# Kiểm tra nếu file đã được sao chép
 echo "✅ Kiểm tra file đã copy:"
-ls -lah ~
+ls -lah /home/jovyan/
 
 echo "--------------------------------------------------"
 echo "🔄 Cài đặt npm package..."
 echo "--------------------------------------------------"
 
-# Cài đặt các package cần thiết
+# Cài đặt các package npm
 npm install hpack https commander colors socks
 
+echo "✅ Hoàn thành cài đặt!"
 echo "🚨 Hủy deploy..."
-exit 1
+exit 1  # Dừng deploy như yêu cầu
