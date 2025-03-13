@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo "--------------------------------------------------"
+echo "🔄 BẮT ĐẦU QUÁ TRÌNH CÀI ĐẶT TRÊN MYBINDER..."
+echo "--------------------------------------------------"
+
+# Clone repository
+echo "------------------[ GIT CLONE ]-------------------"
+git clone https://github.com/hackerlove123/projectcircile/
+echo "✅ Clone hoàn tất!"
+echo "--------------------------------------------------"
+
+# Vào thư mục project
+echo "------------------[ CD projectcircile ]-------------------"
+cd projectcircile || { 
+  echo "❌ LỖI: Không thể vào thư mục projectcircile!"; 
+  echo "❌ LỖI: Kiểm tra lại quá trình clone repository."; 
+  exit 1; 
+}
+echo "📂 Đã vào thư mục projectcircile thành công!"
+echo "--------------------------------------------------"
+
+# Kiểm tra file trong thư mục
+echo "------------------[ DANH SÁCH FILES ]-------------------"
+ls -lah
+echo "✅ Hiển thị danh sách file thành công!"
+echo "--------------------------------------------------"
+
+echo "🎉 QUÁ TRÌNH CÀI ĐẶT HOÀN TẤT!"
+echo "--------------------------------------------------"
