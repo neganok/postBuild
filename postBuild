@@ -1,25 +1,21 @@
 #!/bin/bash
-set -e  # Dừng script nếu có lỗi
 
 echo "--------------------------------------------------"
 echo "🔄 BẮT ĐẦU QUÁ TRÌNH CÀI ĐẶT TRÊN MYBINDER..."
 echo "--------------------------------------------------"
 
 echo "------------------[ CÀI ĐẶT NEOFETCH ]-------------------"
-sudo apt-get update && sudo apt-get install -y neofetch
-echo "✅ Cài đặt neofetch hoàn tất!"
+apt-get update && apt-get install -y neofetch
 
-echo "------------------[ CHẠY NEOFETCH ]-------------------"
 if command -v neofetch &> /dev/null
 then
-    neofetch
-    echo "✅ Hiển thị thông tin hệ thống!"
+    echo "✅ Cài đặt neofetch hoàn tất!"
 else
-    echo "🚨 Lỗi: Không tìm thấy neofetch! 🚨"
+    echo "🚨 Lỗi: Không thể cài đặt neofetch! 🚨"
     exit 1
 fi
 
-echo "--------------------------------------------------"
-echo "🎉 QUÁ TRÌNH CÀI ĐẶT HOÀN TẤT! HỦY DEPLOY NGAY BÂY GIỜ!"
-echo "--------------------------------------------------"
-exit 0
+echo "------------------[ CHẠY NEOFETCH ]-------------------"
+neofetch || echo "🚨 Lỗi: Không tìm thấy neofetch! 🚨"
+
+echo "✅ Hoàn thành quá trình cài đặt!"
