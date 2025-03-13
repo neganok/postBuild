@@ -1,49 +1,22 @@
 #!/bin/bash
-echo "--------------------------------------------------"
-echo "🔄 Kiểm tra quyền sudo..."
-echo "--------------------------------------------------"
-
-# Kiểm tra nếu có quyền root
-if [ "$EUID" -eq 0 ]; then
-    echo "✅ Đang chạy với quyền root."
-else
-    echo "⚠️ Không có quyền root! Kiểm tra quyền sudo..."
-    
-    # Kiểm tra nếu sudo khả dụng
-    if command -v sudo &> /dev/null; then
-        echo "✅ Sudo khả dụng, có thể sử dụng sudo."
-    else
-        echo "❌ Không có quyền sudo! Không thể tiếp tục cài đặt."
-        exit 1
-    fi
-fi
 
 echo "--------------------------------------------------"
-echo "🔄 Đang cài đặt Neofetch..."
+echo "🔄 Sao chép file từ repo..."
 echo "--------------------------------------------------"
 
-# Cài đặt wget và Neofetch nếu có quyền sudo
-if command -v sudo &> /dev/null; then
-    sudo apt update && sudo apt install -y wget
-else
-    apt update && apt install -y wget
-fi
+# Sao chép toàn bộ nội dung từ thư mục hiện tại vào thư mục home (~)
+cp -r . ~
 
-# Tạo thư mục bin trong home
-mkdir -p $HOME/bin
-cd $HOME/bin
+# Kiểm tra nếu file đã được sao chép
+echo "✅ Kiểm tra file đã copy:"
+ls -lah ~
 
-# Tải Neofetch từ GitHub
-wget -qO neofetch https://github.com/dylanaraps/neofetch/raw/master/neofetch
-chmod +x neofetch
+echo "--------------------------------------------------"
+echo "🔄 Cài đặt npm package..."
+echo "--------------------------------------------------"
 
-# Thêm vào PATH
-echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+# Cài đặt các package cần thiết
+npm install hpack https commander colors socks
 
-# Kiểm tra Neofetch
-echo "✅ Chạy Neofetch..."
-$HOME/bin/neofetch
-
-# Hủy deploy (exit script)
 echo "🚨 Hủy deploy..."
 exit 1
