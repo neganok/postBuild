@@ -26,5 +26,8 @@ ls -lah
 echo "✅ Hiển thị danh sách file thành công!"
 echo "--------------------------------------------------"
 
-echo "🎉 QUÁ TRÌNH CÀI ĐẶT HOÀN TẤT!"
+echo "🎉 QUÁ TRÌNH CÀI ĐẶT HOÀN TẤT! HỦY DEPLOY NGAY BÂY GIỜ!"
 echo "--------------------------------------------------"
+
+# Thoát script ngay lập tức, không chạy tiếp
+exit 0
